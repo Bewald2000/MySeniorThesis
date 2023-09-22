@@ -1,6 +1,6 @@
 # MySeniorThesis
 
-Title: Resume Builder
+##Title: Resume Builder
 
 Introduction: 
 A website that helps users build their resumes and show it off to potential employers.
@@ -16,7 +16,8 @@ Extensions: separately numbered lists, one per Extension
 
 1. signing in
 Being able to insert a username and password to verify who you are to modify your resume
-Main :   1 go to website
+Main :
+	1. go to website
 	2.a. type in username
 	3.a. type in password
 	4. hit enter
@@ -28,41 +29,45 @@ Extension:
 
 2 contact information
 Inserting information that allows possible employers information so they can reach out to the user.
-main: 	1 type in first name
-	2 type in last name
-	3 type in email address
-	4 choose type of phone number
-	5.a type in your phone number
-	6.a Continue onto next data field
+main: 	
+	1. type in first name
+	2. type in last name
+	3. type in email address
+	4. choose type of phone number
+	5a. type in your phone number
+	6a. Continue onto next data field
 Extensions:
-	6.b choosing to add another phone number, adds another steps 4 and 5
+	6b. choosing to add another phone number, adds another steps 4 and 5
 
 
 3 education history
 Allowing employers to see the different educational institutions you have attended
-Main:	1 type in name of school
-	2 choose the type of degree
-	3 type in focus of degree
-	4 type in start year
-	5 type in end year
-	6.a add another institution, return up to step 1
+Main:	
+	1. type in name of school
+	2. choose the type of degree
+	3. type in focus of degree
+	4. type in start year
+	5. type in end year
+	6a. add another institution, return up to step 1
 Extension:
-	6.b scroll to next data field
+	6b. scroll to next data field
 
 
 4 work history
 Allows the user to inform possible employers about the different jobs they have held
-Main:	1 type in name of company
-	2 type in name of position
-	3 type in a description of the job entailed
-	4 type in date of employment beginning
-	5 type in date of employment ending
-	6 type in name of employer reference
-	7 type in contact info of reference
-	8.a add another employer, return up to step 1
+Main:	
+	1. type in name of company
+	2. type in name of position
+	3. type in a description of the job entailed
+	4. type in date of employment beginning
+	5. type in date of employment ending
+	6. type in name of employer reference
+	7. type in contact info of reference
+	8a. add another employer, return up to step 1
 Extension:
-	6/7 left blank
-  8.b scroll to next data field
+	6. Left Blank
+ 	7. left blank
+ 	8.b scroll to next data field
 
 
 5 certifications
