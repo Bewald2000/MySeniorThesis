@@ -18,13 +18,13 @@ Extensions: separately numbered lists, one per Extension
 Being able to insert a username and password to verify who you are to modify your resume
 Main :
 	1. go to website
-	2.a. type in username
-	3.a. type in password
+	2a. type in username
+	3a. type in password
 	4. hit enter
 	5. go to your resume
 Extension:
-	2.b. no account / new user
-	3.b. forgot password
+	2b. no account / new user
+	3b. forgot password
 
 
 2 contact information
@@ -67,7 +67,7 @@ Main:
 Extension:
 	6. Left Blank
  	7. left blank
- 	8.b scroll to next data field
+ 	8b. scroll to next data field
 
 
 5 certifications
