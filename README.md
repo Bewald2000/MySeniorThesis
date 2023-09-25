@@ -80,11 +80,18 @@ A website that helps users build their resumes and show it off to potential empl
 
 
 8. Backend
-	*The system that runs the website, and makes sure that each user is seeing the right information, and can use all features of the website.
-	*Main:
-	*Extensions:
+	* The system that runs the website, and makes sure that each user is seeing the right information, and can use all features of the website.
+	* Main:
+	* Extensions:
 
 
 Technology:
+	* For the back end:
+ 		1. Ruby on Rails (need to learn)
+   		2. SQl (for the database)
+     	* For the front end (need to relearn):
+      		1. Javsscript (to create the page)
+		2. HTML (for how the site will be layed out)
+  		3. CSS (for how everything will look)
 
-Testing:
+Testing
