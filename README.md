@@ -73,7 +73,7 @@ A website that helps users build their resumes and show it off to potential empl
 	* Extensions:
 
 
-7. Resume …
+7. Resume Layout
 	* The ability to store and send a user's resume to possible employers in multiple different ways to best get a user's name and qualifications out to the world.
 	* Main:
 	* Extensions:
@@ -88,6 +88,7 @@ A website that helps users build their resumes and show it off to potential empl
 Technology:
 	* For the back end:
  		1. Ruby on Rails (need to learn)
+   			* currently learning Ruby
    		2. SQl (for the database)
      	* For the front end (need to relearn):
       		1. Javsscript (to create the page)
