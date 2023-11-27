@@ -64,7 +64,11 @@ A website that helps users build their resumes and show it off to potential empl
 5. certifications
 	* Allow users to inform possible employers about any certifications that could be beneficial to the employer.
 	* Main:
+  		1. type in name of award
+  		2. type in description of award
+		3. add another certification or reward.
 	* Extensions:
+ * 		3.b scroll to the next section of data feilds
 
 
 6. Style of Resume Look
