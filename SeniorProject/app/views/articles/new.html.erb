@@ -1,0 +1,32 @@
+<h1>New Resume</h1>
+
+<%= form_with model: @users do |form| %>
+  <div>
+    <%= form.label :fname %><br>
+    <%= form.text_field :fname %>
+  </div>
+
+  <div>
+    <%= form.label :lname %><br>
+    <%= form.text_area :lname %>
+  </div>
+
+  <div>
+    <%= form.label :prename %><br>
+    <%= form.text_field :prename %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_area :email %>
+  </div>
+
+  <div>
+    <%= form.label :phonenumber%><br>
+    <%= form.text_area :phonenumber %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
