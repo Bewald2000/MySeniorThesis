@@ -1,20 +1,20 @@
 class ArticlesController < ApplicationController
   def index
-    @users = User.all
+    @user = User.all
   end
 
   def show
-    @users = Users.find(params[:id])
+    @user = User.find(params[:id])
   end
   
   def new
-    @users = Users.new
+    @user = User.new
   end
 
   def create
-    @users = Users.new(user_params)
-    if @users.save
-      redirect_to @users
+    @user = User.new(user_params)
+    if @user.save
+      redirect_to @user
     else
       render :new, status: :unprocessible_entity
     end
