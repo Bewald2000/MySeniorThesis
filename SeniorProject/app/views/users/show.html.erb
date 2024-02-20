@@ -1,3 +1,11 @@
 <h1><%= @user.prename @user.lname%></h1>
 
 <p><%= @user.fname @user.lname%></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_article_path(@user) %></li>
+  <li><%= link_to "Destroy", article_path(@user), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
