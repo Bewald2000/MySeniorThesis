@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_27_181507) do
+ActiveRecord::Schema[7.1].define(version: 2024_02_21_173803) do
+  create_table "degrees", force: :cascade do |t|
+    t.string "schoolname"
+    t.date "sdate"
+    t.date "edate"
+    t.string "educationlevel"
+    t.integer "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["users_id"], name: "index_degrees_on_users_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "fnames"
     t.text "lname"
@@ -23,4 +34,5 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_27_181507) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "degrees", "users", column: "users_id"
 end

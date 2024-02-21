@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :degrees
+
     validates :fname, presence: true
     validates :lname, presence: true, length: { minimum: 2}
     validates :prename, allow_blank: true, length: {maximum: 8}
