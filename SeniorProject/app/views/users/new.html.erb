@@ -11,7 +11,7 @@
 
   <div>
     <%= form.label :"Last Name" %><br>
-    <%= form.text_area :lname %>
+    <%= form.text_field :lname %>
     <% @user.errors.full_messages_for(:lname).each do |message|%>
       <div><%= message %> </div>
     <% end %>
@@ -27,7 +27,7 @@
 
   <div>
     <%= form.label :Email %><br>
-    <%= form.text_area :email %>
+    <%= form.text_field :email %>
     <% @user.errors.full_messages_for(:email).each do |message|%>
       <div><%= message %> </div>
     <% end %>
@@ -35,7 +35,7 @@
 
   <div>
     <%= form.label :Phonenumber%><br>
-    <%= form.text_area :phonenumber %>
+    <%= form.text_field :phonenumber %>
     <% @user.errors.full_messages_for(:phonenumber).each do |message|%>
       <div><%= message %> </div>
     <% end %>
