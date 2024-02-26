@@ -10,7 +10,10 @@
                   } %></li>
 </ul>
 
-<h2>Add a Degree: </h2>
+<h2>"Education History"</h2>
+<%= render @user.degrees %>
+
+<h2>Add Education: </h2>
 <%= form_with model: [ @user, @user.degrees.build ] do |form| %>
   <p>
     <%= form.label :"School Name" %><br>
@@ -19,6 +22,10 @@
   <p>
     <%= form.label :"Start Date" %><br>
     <%= form.date_field :sdate %>
+  </p>
+  <p>
+    <%= form.label :"End Date" %><br>
+    <%= form.date_field :edate %>
   </p>
   <p>
     <%= form.label :"Education Level" %><br>
