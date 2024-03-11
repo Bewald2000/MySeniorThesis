@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_21_173803) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_11_193335) do
   create_table "degrees", force: :cascade do |t|
     t.string "schoolname"
     t.date "sdate"
@@ -19,6 +19,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_173803) do
     t.integer "users_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
     t.index ["users_id"], name: "index_degrees_on_users_id"
   end
 
@@ -32,6 +33,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_21_173803) do
     t.string "phonenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status"
   end
 
   add_foreign_key "degrees", "users", column: "users_id"

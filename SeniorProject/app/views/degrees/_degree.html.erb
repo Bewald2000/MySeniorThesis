@@ -1,16 +1,24 @@
-<p>
-    <strong>"School Name: "</strong>
-    <%- degree.schoolname %>
-</p>
-<p>
-    <strong>"Start Date: "</strong>
-    <%- degree.sdate %>
-</p>
-<p>
-    <strong>"End Date: "</strong>
-    <%- degree.edate %>
-</p>
-<p>
-    <strong>"Education Level: "</strong>
-    <%- degree.educationlevel %>
-</p>
+<% unless degree.archived? %>
+    <p>
+        <strong>"School Name: "</strong>
+        <%- degree.schoolname %>
+    </p>
+    <p>
+        <strong>"Start Date: "</strong>
+        <%- degree.sdate %>
+    </p>
+    <p>
+        <strong>"End Date: "</strong>
+        <%- degree.edate %>
+    </p>
+    <p>
+        <strong>"Education Level: "</strong>
+        <%- degree.educationlevel %>
+    </p>
+    <p>
+        <%= link_to "Destroy Education", [degree.user, degree], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+            } %>
+    </p>
+<% end %>
