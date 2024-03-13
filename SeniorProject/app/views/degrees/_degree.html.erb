@@ -21,4 +21,20 @@
             turbo_confirm: "Are you sure?"
             } %>
     </p>
+
+    <h2>Add a major to this degree:</h2>
+    <%= form_with model: [ @adegree, @degree.major.build ] do |form| %>
+    <p>
+        <%= form.label :"Majors full name" %><br>
+        <%= form.text_field :majname %>
+    </p>
+    <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected 'public'%>
+  <p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>
+
 <% end %>
