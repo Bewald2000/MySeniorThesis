@@ -1,0 +1,13 @@
+<%= unless majors.archived%>
+    <p>
+        <%= majname.majname %>
+    </p>
+
+    <p>
+    <%= link_to "Destroy Comment", [major.degree, major], data: {
+                  turbo_method: :delete,
+                  turbo_confirm: "Are you sure?"
+                } %>
+    </p>
+
+<% end %>
