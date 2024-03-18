@@ -1,0 +1,19 @@
+<%= form_with model: [ @user, @user.award.build ] do |form| %>
+    <p>
+    <%= form.label :"Award Name" %><br>
+    <%= form.text_field :aname %>
+  </p>
+  <p>
+    <%= form.label :"Description of Award" %><br>
+    <%= fomr.text_field :description %>
+  <p>
+    <%= form.label :"Awarded On" %><br>
+    <%= form.date_field :awardeddate %>
+  </p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected 'public'%>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

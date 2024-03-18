@@ -2,6 +2,7 @@ class User < ApplicationRecord
     include Visible
 
     has_many :degrees, dependent: :destroy
+    has_many :awards, dependent: :destroy
 
     validates :fname, presence: true
     validates :lname, presence: true, length: { minimum: 2}

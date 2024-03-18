@@ -13,5 +13,11 @@
 <h2>"Education History"</h2>
 <%= render @user.degrees %>
 
+<h2>"Awards"</h2>
+<%= render @user.award %>
+
 <h2>Add Education: </h2>
 <%= render "degrees/form" %>
+
+<h2>Add Awards: </h2>
+<%= render "award/form" %>

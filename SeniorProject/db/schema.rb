@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_15_152627) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_18_154831) do
+  create_table "awards", force: :cascade do |t|
+    t.string "aname"
+    t.string "string"
+    t.string "description"
+    t.date "awardeddate"
+    t.integer "User_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.index ["User_id"], name: "index_awards_on_User_id"
+  end
+
   create_table "degrees", force: :cascade do |t|
     t.string "schoolname"
     t.date "sdate"
@@ -54,6 +66,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_15_152627) do
     t.string "status"
   end
 
+  add_foreign_key "awards", "Users"
   add_foreign_key "degrees", "users", column: "users_id"
   add_foreign_key "majors", "degrees"
   add_foreign_key "minors", "degrees"
