@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :degrees do
       resources :majors
+      resources :minors
     end
   end
 end

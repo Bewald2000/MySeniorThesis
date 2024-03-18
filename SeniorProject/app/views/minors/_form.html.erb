@@ -1,0 +1,13 @@
+<%= form_with model: [ @adegree, @degree.minor.build ] do |form| %>
+    <p>
+        <%= form.label :"Minor's full name" %><br>
+        <%= form.text_field :minname %>
+    </p>
+    <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected 'public'%>
+  <p>
+    <p>
+        <%= form.submit %>
+    </p>
+<% end %>

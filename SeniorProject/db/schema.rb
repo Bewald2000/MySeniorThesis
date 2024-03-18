@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_13_153917) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_15_152627) do
   create_table "degrees", force: :cascade do |t|
     t.string "schoolname"
     t.date "sdate"
@@ -32,6 +32,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_153917) do
     t.index ["degree_id"], name: "index_majors_on_degree_id"
   end
 
+  create_table "minors", force: :cascade do |t|
+    t.string "minname"
+    t.string "status"
+    t.integer "degree_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["degree_id"], name: "index_minors_on_degree_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "fnames"
     t.text "lname"
@@ -47,4 +56,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_13_153917) do
 
   add_foreign_key "degrees", "users", column: "users_id"
   add_foreign_key "majors", "degrees"
+  add_foreign_key "minors", "degrees"
 end

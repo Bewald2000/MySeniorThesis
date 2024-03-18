@@ -25,7 +25,13 @@
     <h2>Major</h2>
     <% render @degree.majors %>
 
+    <h2>Minor</h2>
+    <% render @degree.minors %>
+
     <h2>Add a major to this degree:</h2>
     <% render 'majors/form' %>
+
+    <h2>Add a minor to this degree:</h2>
+    <% render 'minors/form' %>
 
 <% end %>
