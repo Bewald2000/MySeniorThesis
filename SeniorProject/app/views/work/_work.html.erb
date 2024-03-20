@@ -1,0 +1,39 @@
+<% unless work.archived? %>
+    <p>
+        <strong>"Company Name: "</strong>
+        <%- work.company %>
+    </p>
+    <p>
+        <strong>"Position Worked: "</strong>
+        <%- work.position %>
+    </p>
+    <p>
+        <strong>"Description: "</strong>
+        <%- work.description%>
+    <p>
+        <strong>"Date Started: "</strong>
+        <%- sdate %>
+    </p>
+    <p>
+        <strong>"Date Endeded: "</strong>
+        <%- edate %>
+    </p>
+    <p>
+        <strong>"Reference Name: "</strong>
+        <%- refname %>
+    </p>
+    <p>
+        <strong>"Reference's Phone Number: "</strong>
+        <%- refphone %>
+    </p>
+    <p>
+        <strong>"Reference's Email: "</strong>
+        <%- refemail %>
+    </p>
+    <p>
+        <%= link_to "Destroy Education", [degree.user, degree], data: {
+            turbo_method: :delete,
+            turbo_confirm: "Are you sure?"
+            } %>
+    </p>
+<% end %>

@@ -1,0 +1,40 @@
+<%= form_with model: [ @user, @user.degrees.build ] do |form| %>
+  <p>
+    <%= form.label :"Company Name" %><br>
+    <%= form.text_field :company %>
+  </p>
+  <p>
+    <%= form.label :"Name of Position" %><br>
+    <%= form.text_field :position %>
+  </p>
+  <p>
+    <%= form.label :"Description of Duties" %><br>
+    <%= form.text_field :description %>
+  </p>
+  <p>
+    <%= form.label :"Start Date" %><br>
+    <%= form.date_field :sdate %>
+  </p>
+  <p>
+    <%= form.label :"End Date" %><br>
+    <%= form.date_field :edate %>
+  </p>
+  <p>
+    <%= form.label :"Reference Name" %><br>
+    <%= form.text_field :refname %>
+  </p>
+  <p>
+    <%= form.label :"Reference's Phone Number" %><br>
+    <%= form.text_field :refphone %>
+  </p>
+  <p>
+    <%= form.label :"Reference's Email" %><br>
+    <%= form.text_field :refemail %>
+  </p>
+  <p>
+    <%= form.label :status %><br>
+    <%= form.select :status, Visible::VALID_STATUSES, selected 'public'%>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

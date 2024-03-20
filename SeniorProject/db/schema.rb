@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_18_154831) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_20_160605) do
   create_table "awards", force: :cascade do |t|
     t.string "aname"
     t.string "string"
@@ -66,8 +66,26 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_18_154831) do
     t.string "status"
   end
 
-  add_foreign_key "awards", "Users"
+  create_table "works", force: :cascade do |t|
+    t.string "position"
+    t.string "string"
+    t.string "description"
+    t.date "sdate"
+    t.date "edate"
+    t.string "refname"
+    t.string "refphone"
+    t.string "refemail"
+    t.integer "User_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "status"
+    t.string "companyname"
+    t.index ["User_id"], name: "index_works_on_User_id"
+  end
+
+  add_foreign_key "awards", "Users", column: "users_id"
   add_foreign_key "degrees", "users", column: "users_id"
-  add_foreign_key "majors", "degrees"
-  add_foreign_key "minors", "degrees"
+  add_foreign_key "majors", "degrees", column: "degrees_id"
+  add_foreign_key "minors", "degrees", column: "degrees_id"
+  add_foreign_key "works", "Users", column: "users_id"
 end

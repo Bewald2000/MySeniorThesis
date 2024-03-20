@@ -3,6 +3,7 @@ class User < ApplicationRecord
 
     has_many :degrees, dependent: :destroy
     has_many :awards, dependent: :destroy
+    has_many :work, dependent: :destroy
 
     validates :fname, presence: true
     validates :lname, presence: true, length: { minimum: 2}

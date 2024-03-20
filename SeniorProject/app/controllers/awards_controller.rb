@@ -14,6 +14,6 @@ class AwardsController < ApplicationController
 
     private
         def degree_params
-            params.require(:degree).permit(:schoolname, :sdate, :edate, :educaationlevel, :status)
+            params.require(:degree).permit(:name, :description, :awardeddate, :status)
         end
 end
