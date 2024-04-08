@@ -2,6 +2,13 @@
 
 <%= form_with model: @user do |form| %>
   <div>
+    <%= form.label :"User Name" %><br>
+    <%= form.text_field :username %>
+    <% @user.errors.full_messages_for(:username).each do |message|%>
+      <div><%= message %> </div>
+    <% end %>
+  </div>
+  <div>
     <%= form.label :"First Name" %><br>
     <%= form.text_field :fname %>
     <% @user.errors.full_messages_for(:fname).each do |message|%>
@@ -34,9 +41,17 @@
   </div>
 
   <div>
-    <%= form.label :Phonenumber%><br>
+    <%= form.label :Phonenumber %><br>
     <%= form.text_field :phonenumber %>
     <% @user.errors.full_messages_for(:phonenumber).each do |message|%>
+      <div><%= message %> </div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :"Pass Word" %><br>
+    <%= form.text_field :password %>
+    <% @user.errors.full_messages_for(:password).each do |message|%>
       <div><%= message %> </div>
     <% end %>
   </div>

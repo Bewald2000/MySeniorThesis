@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_20_160605) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_08_163012) do
   create_table "awards", force: :cascade do |t|
     t.string "aname"
     t.string "string"
@@ -64,6 +64,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_160605) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
+    t.string "encryptedpassword"
+    t.string "persistencetoken"
+    t.string "saccesstoken"
+    t.string "perishtoken"
+    t.integer "logincount"
+    t.integer "failedlogin"
+    t.datetime "lastrequest"
+    t.datetime "currentlogin"
+    t.string "currentloginip"
+    t.string "lastloginip"
+    t.boolean "active"
+    t.boolean "approved"
+    t.boolean "cofirmed"
+    t.index ["perishtoken"], name: "index_users_on_perishtoken"
+    t.index ["persistencetoken"], name: "index_users_on_persistencetoken"
+    t.index ["saccesstoken"], name: "index_users_on_saccesstoken"
   end
 
   create_table "works", force: :cascade do |t|
@@ -83,9 +99,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_20_160605) do
     t.index ["User_id"], name: "index_works_on_User_id"
   end
 
-  add_foreign_key "awards", "Users", column: "users_id"
+  add_foreign_key "awards", "Users"
   add_foreign_key "degrees", "users", column: "users_id"
-  add_foreign_key "majors", "degrees", column: "degrees_id"
-  add_foreign_key "minors", "degrees", column: "degrees_id"
-  add_foreign_key "works", "Users", column: "users_id"
+  add_foreign_key "majors", "degrees"
+  add_foreign_key "minors", "degrees"
+  add_foreign_key "works", "Users"
 end

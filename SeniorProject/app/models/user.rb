@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+    acts_as_authlogic
     include Visible
 
     has_many :degrees, dependent: :destroy
