@@ -1,6 +1,5 @@
 class UsersController < ApplicationController
-  http_basic_authenticate_with name: "dhh", password: "secret", except: [:create]
-    def index
+  def index
       @user = User.all
     end
   
@@ -44,6 +43,6 @@ class UsersController < ApplicationController
   
     private
       def user_params
-        params.require(:user).permit(:fname, :lname, :prename, :phonenumber, :email, :status)
+        params.require(:user).permit(:username, :password, :fname, :lname, :prename, :phonenumber, :email, :status)
       end
   end
