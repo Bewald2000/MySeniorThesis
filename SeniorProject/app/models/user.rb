@@ -2,7 +2,6 @@ class User < ApplicationRecord
     include Visible
 
     acts_as_authentic do |c|
-        puts("here")
         c.log_in_after_create = true
         c.log_in_after_password_change = false
     end # the configuration block is optional

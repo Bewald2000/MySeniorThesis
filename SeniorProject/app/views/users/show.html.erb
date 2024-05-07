@@ -1,6 +1,4 @@
-<h1><%= @user.prename @user.lname%></h1>
-
-<p><%= @user.fname @user.lname%></p>
+<p><%= @user.fname (@User.prename) @user.lname%></p>
 
 <ul>
   <li><%= link_to "Edit", edit_article_path(@user) %></li>
@@ -10,14 +8,14 @@
                   } %></li>
 </ul>
 
-<h2>"Education History"</h2>
+<p>"Education History"</p>
 <%= render @user.degrees %>
 
-<h2>"Awards"</h2>
+<p>"Awards"</p>
 <%= render @user.award %>
 
-<h2>Add Education: </h2>
+<p>Add Education: </p>
 <%= render "degrees/form" %>
 
-<h2>Add Awards: </h2>
+<p>Add Awards: </p>
 <%= render "award/form" %>

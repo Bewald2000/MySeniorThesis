@@ -1,20 +1,8 @@
 <% unless degree.archived? %>
-    <p>
-        <strong>"School Name: "</strong>
-        <%- degree.schoolname %>
-    </p>
-    <p>
-        <strong>"Start Date: "</strong>
-        <%- degree.sdate %>
-    </p>
-    <p>
-        <strong>"End Date: "</strong>
-        <%- degree.edate %>
-    </p>
-    <p>
-        <strong>"Education Level: "</strong>
-        <%- degree.educationlevel %>
-    </p>
+    <p><%- degree.schoolname %></p>
+    <p><%- degree.sdate %></p>
+    <p><%- degree.edate %></p>
+    <p><%- degree.educationlevel %></p>
     <p>
         <%= link_to "Destroy Education", [degree.user, degree], data: {
             turbo_method: :delete,

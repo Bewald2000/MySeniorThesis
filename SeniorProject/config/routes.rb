@@ -1,11 +1,16 @@
 Rails.application.routes.draw do
-  root "users#index"
+  root "home#home"
   
   resources :users do
     resources :degrees do
       resources :majors
       resources :minors
     end
-  resource :user_session
+    resources :work do
+    end
+    resources :award do
+    end
+  end
+  resource :user_session do
   end
 end

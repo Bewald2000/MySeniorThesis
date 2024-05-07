@@ -1,15 +1,7 @@
 <% unless degree.archived? %>
-    <p>
-        <strong>"Award Name: "</strong>
-        <%- award.aname %>
-    </p>
-    <p>
-        <strong>"Description: "</strong>
-        <%- award.description%>
-    <p>
-        <strong>"Date Awarded: "</strong>
-        <%- awardeddate %>
-    </p>
+    <p><%- award.aname %></p>
+    <p><%- award.description%></p>
+    <p><%- awardeddate %></p>
     <p>
         <%= link_to "Destroy Education", [degree.user, degree], data: {
             turbo_method: :delete,
