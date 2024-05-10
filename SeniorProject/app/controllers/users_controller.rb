@@ -12,11 +12,11 @@ class UsersController < ApplicationController
     end
   
     def create
-      @user = User.create(params[:user])
+      @user = User.new(user_params)
       if @user.save
-        redirect_to @user
+        redirect_to show_path(@users)
       else
-        render :new, status: :unprocessible_entity
+        render :new, status: :unprocessable_entity
       end
     end
   
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
   
       if @user.update(user_params)
-        redirect_to @user
+        redirect_to users_path(@user)
       else
         render :edit, status: :unprocessable_entity
       end
@@ -43,6 +43,6 @@ class UsersController < ApplicationController
   
     private
       def user_params
-        params.require(:user).permit(:username, :password, :fname, :lname, :prename, :phonenumber, :email, :status)
+        params.require(:user).permit(:login, :password, :password_confirmation, :fnames, :lname, :prename, :phonenumber, :email, :status)
       end
   end

@@ -1,6 +1,6 @@
 class AwardsController < ApplicationController
     def create
-        @user = User.find(params[:user_id])
+        @user = User.find(params[:users_id])
         @degree = @user.degree.create(degree_params)
         redirect_to user_path(@user)
     end

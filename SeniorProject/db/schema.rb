@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_08_163012) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_08_201756) do
   create_table "awards", force: :cascade do |t|
     t.string "aname"
     t.string "string"
@@ -58,28 +58,34 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_08_163012) do
     t.text "lname"
     t.string "prename"
     t.string "username"
-    t.string "password"
+    t.string "passcode"
     t.string "email"
     t.string "phonenumber"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status"
-    t.string "encryptedpassword"
-    t.string "persistencetoken"
-    t.string "saccesstoken"
-    t.string "perishtoken"
-    t.integer "logincount"
-    t.integer "failedlogin"
-    t.datetime "lastrequest"
-    t.datetime "currentlogin"
-    t.string "currentloginip"
-    t.string "lastloginip"
     t.boolean "active"
     t.boolean "approved"
     t.boolean "cofirmed"
+    t.string "login"
+    t.string "crypted_password"
+    t.string "password_salt"
+    t.string "persistence_token"
+    t.string "single_access_token"
+    t.string "perishable_token"
+    t.integer "login_count"
+    t.integer "failed_login_count"
+    t.datetime "last_request_at"
+    t.datetime "current_login_at"
+    t.datetime "last_login_at"
+    t.string "current_login_ip"
+    t.string "last_login_ip"
+    t.index ["perishable_token"], name: "index_users_on_perishable_token"
     t.index ["perishtoken"], name: "index_users_on_perishtoken"
+    t.index ["persistence_token"], name: "index_users_on_persistence_token"
     t.index ["persistencetoken"], name: "index_users_on_persistencetoken"
     t.index ["saccesstoken"], name: "index_users_on_saccesstoken"
+    t.index ["single_access_token"], name: "index_users_on_single_access_token"
   end
 
   create_table "works", force: :cascade do |t|

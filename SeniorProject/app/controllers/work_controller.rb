@@ -1,15 +1,15 @@
 class WorkController < ApplicationController
     def create
-        @user = User.find(params[:user_id])
-        @work = @user.work.create(work_params)
-        redirect_to user_path(@user)
+        @user = Users.find(params[:user_id])
+        @work = @users.work.create(work_params)
+        redirect_to users_path(@users)
     end
 
     def destroy
         @auser = User.find(params[:user_id])
         @work = @user.work.find(params[:id])
         @work.destroy
-        redirect_to user_path(@user), status: :see_other
+        redirect_to users_path(@users), status: :see_other
     end
 
     private

@@ -1,7 +1,7 @@
 class UserSessionsController < ApplicationController
-  UserSession.create(:login => user.username, :password => user.password, :remember_me => true)
+  UserSession.create(:login => users_id.login, :password => users_id.password, :remember_me => true)
 
-  session = UserSession.new(:login => user.username, :password => user.password, :remember_me => true)
+  session = UserSession.new(:login => users_id.login, :password => users_id.password, :remember_me => true)
   session.save
   
   # requires the authlogic-oid "add on" gem
@@ -16,7 +16,7 @@ class UserSessionsController < ApplicationController
     def create
       @user_session = UserSession.new(user_session_params.to_h)
       if @user_session.save
-        redirect_to show_url
+        redirect_to user_path(@user)
       else
         render :new, status: 422
       end
@@ -30,6 +30,6 @@ class UserSessionsController < ApplicationController
     private
   
     def user_session_params
-      params.require(:user_session).permit(:username, :password, :remember_me)
+      params.require(:user_session).permit(:login, :password, :remember_me)
     end
   end
