@@ -1,23 +1,23 @@
-<p><%= @users.fnames (@Users.prename) @users.lname%></p>
+<p><%= @user.fnames (@User.prename) @user.lname%></p>
 
 <ul>
-  <li><%= link_to "Edit", edit_article_path(@users) %></li>
-  <li><%= link_to "Destroy", article_path(@users), data: {
+  <li><%= link_to "Edit", edit_article_path(@user) %></li>
+  <li><%= link_to "Destroy", article_path(@user), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %></li>
 </ul>
 
 <p>"Education History"</p>
-<%= render @users.degrees %>
+<%= render @user.degrees %>
 <p>"Work History"</p>
-<%= render @users.work %>
+<%= render @user.works %>
 <p>"Awards"</p>
-<%= render @users.award %>
+<%= render @user.awards %>
 
 <p>Add Education History: </p>
 <%= render "degrees/form" %>
 <p>"Add Work History:"</p>
-<%= render "work/form" %>
+<%= render "works/form" %>
 <p>Add Awards: </p>
-<%= render "award/form" %>
+<%= render "awards/form" %>

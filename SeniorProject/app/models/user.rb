@@ -16,7 +16,7 @@ class User < ApplicationRecord
     validates :prename, allow_blank: true, length: {maximum: 8}
     validates :email, presence: true, format: {with: /@/, message: "should look like an email address."}, length: { maximum: 100 }, uniqueness: {case_sensitive: false, if: :will_save_change_to_email?}
     validates :phonenumber, presence: true, length: { minimum: 13}
-    validates :login, format: {with: /\A[A-Za-z0-9]+\z/, message: "should use only letters and numbers."}, length: { within: 3..100 }, uniqueness: {case_sensitive: true, if: :will_save_change_to_login?}
+    validates :login, format: {with: /\A[a-z0-9]+\z/, message: "should use only letters and numbers."}, length: { within: 3..100 }, uniqueness: {case_sensitive: true, if: :will_save_change_to_login?}
     validates :password, confirmation: { if: :require_password? }, length: {minimum: 8, if: :require_password?}
     validates :password_confirmation, length: { minimum: 8, if: :require_password?}
 
